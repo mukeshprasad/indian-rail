@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Seat Availability</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Train Seat Availability</h1>
+        <div class="form-response-container">
+            <div class="form-container">
+                <form id="availabilityForm" action="/check_availability" method="POST">
+                    <label for="trainNo">Train No:</label>
+                    <input type="text" id="trainNo" name="trainNo" required>
+
+                    <label for="source">Source:</label>
+                    <input type="text" id="source" name="source" required>
+
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" name="destination" required>
+
+                    <label for="journeyDate">Journey Date:</label>
+                    <input type="date" id="journeyDate" name="journeyDate" required>
+
+                    <label for="class">Class:</label>
+                    <select id="class" name="class" required>
+                        <option value="">Select Class</option>
+                        <option value="1A">AC First Class (1A)</option>
+                        <option value="2A">AC 2 Tier (2A)</option>
+                        <option value="3A">AC 3 Tier (3A)</option>
+                        <option value="SL">Sleeper (SL)</option>
+                        <!-- Add more options if needed -->
+                    </select>
+
+                    <label for="quota">Quota:</label>
+                    <select id="quota" name="quota" required>
+                        <option value="">Select Quota</option>
+                        <option value="GN">GENERAL</option>
+                        <option value="TQ">TATKAL</option>
+                        <option value="PT">PREMIUM TATKAL</option>
+                        <!-- Add more options if needed -->
+                    </select>
+
+                    <input type="submit" id="submitButton" value="Check Availability">
+                </form>
+            </div>
+            <div class="response-container" id="responseContainer"></div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
